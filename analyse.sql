@@ -93,4 +93,8 @@ FROM
 GROUP BY
     floor_area
 ORDER BY
-    floor_area;
+    CASE
+        WHEN floor_area LIKE '<=%' THEN 0  -- Handling '<= 200'
+        WHEN floor_area LIKE '>%' THEN 3001 -- Handling '>3000'
+        ELSE CAST(SUBSTRING(floor_area FROM 1 FOR POSITION(' ' IN floor_area) - 1) AS INTEGER)
+    END;
