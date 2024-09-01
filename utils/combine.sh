@@ -12,7 +12,7 @@ fi
 first_file=true
 
 # Loop through the files in the current directory
-for file in *_modified.csv; do
+for file in *.csv; do
     if [ "$first_file" = true ]; then
         # Include the header for the first file
         cat "$file" >> "$output_file"

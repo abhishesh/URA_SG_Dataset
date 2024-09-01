@@ -1,6 +1,6 @@
 # Variables
 DIALECT = duckdb
-SQL_FILES = analyse.sql # Add more SQL files here if needed
+SQL_FILES = analyse01.sql analyse02.sql # Add more SQL files here if needed
 
 # Default target
 all: lint
